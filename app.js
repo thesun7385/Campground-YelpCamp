@@ -4,6 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const Campground = require('./models/campground');
 const methodOverride = require('method-override');  
+const ejsMate = require('ejs-mate');
 
 
 // Test mongodb connection // update
@@ -28,7 +29,12 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));  // for PUT request
+
+// for PUT request
+app.use(methodOverride('_method'));  
+
+// For serving static files
+app.engine('ejs',ejsMate); 
 
 /////////////////////////////////// ROUTING ////////////////////////////////////////////////////////
 app.get('/',(req,res)=>{
