@@ -4,7 +4,7 @@
 <div class="row">
   <h1 class="text-center">New Campground</h1>
   <div class="col-6 offset-3">
-    <form action="/campgrounds" method="POST">
+    <form action="/campgrounds" method="POST" novalidate class="validated-form">
       <div class="mb-3">
         <label class="form-label" for="title">Title</label>
         <input
@@ -12,7 +12,9 @@
           type="text"
           name="campground[title]"
           id="title"
+          required
         />
+        <div class="valid-feedback">Correct!</div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="location">Location</label>
@@ -21,7 +23,9 @@
           type="text"
           name="campground[location]"
           id="location"
+          required
         />
+        <div class="valid-feedback">Correct!</div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="image">Image</label>
@@ -30,7 +34,9 @@
           type="text"
           name="campground[image]"
           id="image"
+          required
         />
+        <div class="valid-feedback">Correct!</div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="price">Campground Price</label>
@@ -44,7 +50,9 @@
             aria-label="price"
             aria-describedby="price-label"
             name="campground[price]"
+            required
           />
+          <div class="valid-feedback">Correct!t!</div>
         </div>
       </div>
 
@@ -55,14 +63,22 @@
           type="text"
           name="campground[description]"
           id="description"
-        >
-        </textarea>
+          required
+        ></textarea>
+        <div class="valid-feedback">Correct!!</div>
       </div>
       <div class="mb-3">
         <button class="btn btn-success">Add Campground</button>
       </div>
     </form>
 
-    <a href="/campgrounds">All Campgrounds</a>
+    <div class="mb-3">
+      <button
+        class="btn btn-info"
+        onclick="window.location.href='/campgrounds'"
+      >
+        All Campgrounds
+      </button>
+    </div>
   </div>
 </div>
