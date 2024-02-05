@@ -10,6 +10,10 @@ const CampgroundSchema = new Schema({
     image: String, // Make sure you have this field
     description: String,
     price: Number,
+    author:{
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
     reviews: [
         {
             // object ID from the review model
@@ -31,7 +35,7 @@ CampgroundSchema.post('findOneAndDelete', async function (doc) {
     })
   }
 
-  console.log(`Deleted Camground Title: ${doc.title}`);
+  //console.log(`Deleted Camground Title: ${doc.title}`);
 })
 
 module.exports = mongoose.model('Campground', CampgroundSchema);

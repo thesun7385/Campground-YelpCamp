@@ -9,6 +9,12 @@ const methodOverride = require('method-override');
 const app = express();  // create express app
 const Joi = require('joi')
 
+// Allows to authenticate via different strategies
+const passport = require('passport'); 
+const LocalStrategy = require('passport-local');
+const User = require('./models/user');
+
+
 
 /// You have changed routes to campgrounds.js and reviews.js, so no need to require them here
 // const Campground = require('./models/campground'); 
@@ -16,9 +22,10 @@ const Joi = require('joi')
 // const {campgroundSchema,reviewSchema} = require('./schemas.js');
 // const catchAsync = require('./utils/catchAsync');
 
-// Using routes
-const campgrounds = require('./routes/campgrounds');
-const reviews = require('./routes/reviews');
+///////////////// Import routes /////////////
+const campgroundRoutes = require('./routes/campgrounds');
+const reviewRoutes = require('./routes/reviews');
+const userRoutes = require('./routes/users');
 
 // Test mongodb connection // update
 mongoose
@@ -51,12 +58,7 @@ app.use(session(sessionConfig));
 
 // Flash configuration
 app.use(flash());
-// Set-up middleware to use flash for every single request
-app.use((req,res,next)=>{
-  res.locals.success = req.flash('success');
-  res.locals.error = req.flash('error');
-  next();
-})
+// Set-up middleware 
 
 // set view engine to ejs    
 app.set('view engine', 'ejs'); 
@@ -78,14 +80,30 @@ app.engine('ejs',ejsMate);
 //This line sets the directory where your application will look for public
 app.use(express.static(path.join(__dirname, 'public')));  
 
+//////////////////////////// MIDDELWARE FOR AUTHENTICATION ///////////////
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser()); // store in session
+passport.deserializeUser(User.deserializeUser()); // unstore in session
+
+// Middleware to check if user is logged in and to display the user in the header
+app.use((req,res,next)=>{
+  //console.log(req.session);
+  res.locals.currentUser = req.user;
+  res.locals.success = req.flash('success');
+  res.locals.error = req.flash('error');
+  next();
+})
+
 /////////////////////////////////// ROUTING ////////////////////////////////////////////////////////
-
-
 // Use the routes
 // Evrything in the campgrounds file will start with /campgrounds 
 // and everything in the reviews file will start with /campgrounds/:id/reviews
-app.use('/campgrounds',campgrounds);
-app.use('/campgrounds/:id/reviews',reviews);
+app.use('/campgrounds',campgroundRoutes);
+app.use('/campgrounds/:id/reviews',reviewRoutes);
+app.use('/',userRoutes);
+
 
 app.get('/',(req,res)=>{
     res.render('home');
@@ -94,6 +112,8 @@ app.get('/',(req,res)=>{
 /////////////////////////////////// ERROR HANDLING /////////////////////////////////////////////////
 
 // Very important step: this should be the last route
+// Every route that is not found will be handled by this route
+// You must not have any route after this route
 app.all('*',(req,res,next)=>{
   next(new ExpressError('Page Not Found', 404));
 })

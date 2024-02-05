@@ -37,6 +37,7 @@ const seedDB = async()=>{
 
         // Create a new campground from the cities array
         const camp = new Campground ({
+            author: '65bfdf7070a26aa70446b832', // every campground is created by this user
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
             image: "https://source.unsplash.com/collection/483251",
