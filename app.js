@@ -14,13 +14,20 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
-
-
 /// You have changed routes to campgrounds.js and reviews.js, so no need to require them here
 // const Campground = require('./models/campground'); 
 // const Review = require('./models/review'); 
 // const {campgroundSchema,reviewSchema} = require('./schemas.js');
 // const catchAsync = require('./utils/catchAsync');
+
+// Set environment variable
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+console.log('Cloudinary Name: '+ process.env.COULDINARY_CLOUD_NAME);
+console.log('Cloudinary Key: '+ process.env.COULDINARY_KEY);
+
 
 ///////////////// Import routes /////////////
 const campgroundRoutes = require('./routes/campgrounds');

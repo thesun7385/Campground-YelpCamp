@@ -40,9 +40,18 @@ const seedDB = async()=>{
             author: '65bfdf7070a26aa70446b832', // every campground is created by this user
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: "https://source.unsplash.com/collection/483251",
+            //image: "https://source.unsplash.com/collection/483251",
             description:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda nesciunt non autem possimus maiores, perferendis minima ipsum qui nulla et facere tempore vel consequuntur hic quidem id voluptatem. Necessitatibus, debitis!',
-            price
+            price,
+            images: [
+              {
+                url: 'https://res.cloudinary.com/dwsihr9yg/image/upload/v1707450370/YelpCamp/q0xndghmjzknd1djkp90.jpg',
+                filename: 'YelpCamp/q0xndghmjzknd1djkp90',             
+              },
+              {
+                url: 'https://res.cloudinary.com/dwsihr9yg/image/upload/v1707450371/YelpCamp/j6qv51w2tt6ifcbjbqpx.jpg',
+                filename: 'YelpCamp/j6qv51w2tt6ifcbjbqpx',           
+              }]
           })
         await camp.save();
     }

@@ -3,11 +3,22 @@ const { campgroundSchema } = require('../schemas');
 const Schema = mongoose.Schema;
 const Review = require('./review'); // Import the Review model
 
+// Key: Usig virtuals to get the thumbnail image
+const ImageSchema = new Schema({
+    url: String,
+    filename: String
+});
+
+// Add a virtual to get the thumbnail image
+ImageSchema.virtual('thumbnail').get(function () {
+    return this.url.replace('/upload', '/upload/w_200');
+});
+
 // Define Schema
 const CampgroundSchema = new Schema({
     location: String,
     title: String,
-    image: String, // Make sure you have this field
+    images: [ImageSchema],
     description: String,
     price: Number,
     author:{
@@ -22,6 +33,8 @@ const CampgroundSchema = new Schema({
         }
     ]
 });
+
+
 
 // Very important method!!!
 // Middleware to delete the reviews when the campground is deleted
