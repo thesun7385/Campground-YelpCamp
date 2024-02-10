@@ -2,10 +2,12 @@
 <% layout('/layouts/boilerplate') %>
 <link rel="stylesheet" href="/stylesheets/stars.css">
 
+
 <!-- Key: Very important card template -->
 <div class="row">
   <!-- A slideshow component for cycling through elements -->
   <div class="col-6">
+  
     <div id="carouselExample" class="carousel slide">
       <div class="carousel-inner">
         <% campground.images.forEach((img,i) => { %>
@@ -23,7 +25,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
- 
+   
     <div class="card mb-5">   
       <div class="card-body">
         <h5 class="card-title"><%= campground.title %></h5>
@@ -56,6 +58,8 @@
       <div class="card-footer text-muted">2 days ago</div>
     </div>
   </div>
+     <!-- Mapbox -->
+     <div id='map' style='width: 400px; height: 300px;'></div>
   <div class="col-6">
     <% if(currentUser) {%>
     <h2>Leave a Review</h2>
@@ -127,3 +131,12 @@
     <% }%>
   </div>
 </div>
+
+
+<script>
+  const mapToken = '<%- process.env.MAPBOX_TOKEN %>'
+  const campground = <%- JSON.stringify(campground) %>
+</script>
+
+<!-- create a mapbox map -->
+<script src="/javascripts/showPageMap.js"></script>

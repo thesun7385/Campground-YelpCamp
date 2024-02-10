@@ -34,10 +34,11 @@ const seedDB = async()=>{
     for(let i=0; i<50; i++){
         const random1000 = Math.floor(Math.random()*1000);
         const price = Math.floor(Math.random()*20)+10;
-
         // Create a new campground from the cities array
         const camp = new Campground ({
-            author: '65bfdf7070a26aa70446b832', // every campground is created by this user
+          // Your userID 
+          // user:tim1, pw:tim1
+            author: '65bfdf7070a26aa70446b832', 
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
             //image: "https://source.unsplash.com/collection/483251",
@@ -45,13 +46,14 @@ const seedDB = async()=>{
             price,
             images: [
               {
-                url: 'https://res.cloudinary.com/dwsihr9yg/image/upload/v1707450370/YelpCamp/q0xndghmjzknd1djkp90.jpg',
-                filename: 'YelpCamp/q0xndghmjzknd1djkp90',             
+                url: 'https://res.cloudinary.com/dwsihr9yg/image/upload/v1707459228/YelpCamp/jjvbp2kc7qahvqxmwn38.jpg',
+                filename: 'YelpCamp/jjvbp2kc7qahvqxmwn38',             
               },
               {
-                url: 'https://res.cloudinary.com/dwsihr9yg/image/upload/v1707450371/YelpCamp/j6qv51w2tt6ifcbjbqpx.jpg',
-                filename: 'YelpCamp/j6qv51w2tt6ifcbjbqpx',           
-              }]
+                url: 'https://res.cloudinary.com/dwsihr9yg/image/upload/v1707450370/YelpCamp/q0xndghmjzknd1djkp90.jpg',
+                filename: 'YelpCamp/q0xndghmjzknd1djkp90',           
+              }],
+              geometry: { type: 'Point', coordinates: [ -113.133115, 47.020078 ] }
           })
         await camp.save();
     }
