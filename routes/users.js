@@ -1,29 +1,30 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const catchAsync = require('../utils/catchAsync'); // key: path from current directory to the catchAsync file
-const passport = require('passport');
-const { storeReturnTo } = require('../middleware'); 
-const User = require('../models/user');
-const users = require('../controllers/users');
-const user = require('../models/user');
+const catchAsync = require("../utils/catchAsync"); // key: path from current directory to the catchAsync file
+const passport = require("passport");
+const { storeReturnTo } = require("../middleware");
+const User = require("../models/user");
+const users = require("../controllers/users");
+const user = require("../models/user");
 
+router
+  .route("/register")
+  .get(users.renderRegister)
+  .post(catchAsync(users.register));
 
-// admin uer
-// id: tim1
-// password: tim1
-
-router.route('/register')
-    .get(users.renderRegister)
-    .post(catchAsync(users.register));
-
-router.route('/login')
-    .get(users.renderLogin)
-    .post(storeReturnTo ,passport.authenticate('local',
-    {failureFlash: true,failureRedirect:'/login'}),users.login);
-
+router
+  .route("/login")
+  .get(users.renderLogin)
+  .post(
+    storeReturnTo,
+    passport.authenticate("local", {
+      failureFlash: true,
+      failureRedirect: "/login",
+    }),
+    users.login
+  );
 
 // GET /logout route
-router.get('/logout',users.logout);
-
+router.get("/logout", users.logout);
 
 module.exports = router;
