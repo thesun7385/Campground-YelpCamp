@@ -1,9 +1,9 @@
 <!-- All content below will be passed to the boilerplate -->
 <% layout('/layouts/boilerplate') %>
 
-<div class="row">
+<div class="col-md-6 col-xl-6 offset-xl-3 offset-md-3">
   <h1 class="text-center">New Campground</h1>
-  <div class="col-6 offset-3">
+  <div class="col-8 offset-2">
     <form
       action="/campgrounds"
       method="POST"
@@ -73,18 +73,15 @@
         ></textarea>
         <div class="valid-feedback">Correct!!</div>
       </div>
-      <div class="mb-3">
+      <div class="d-grid gap-2">
         <button class="btn btn-success">Add Campground</button>
+        <button
+          class="btn btn-info"
+          onclick="window.location.href='/campgrounds'"
+        >
+          All Campgrounds
+        </button>
       </div>
     </form>
-
-    <div class="mb-3">
-      <button
-        class="btn btn-info"
-        onclick="window.location.href='/campgrounds'"
-      >
-        All Campgrounds
-      </button>
-    </div>
   </div>
 </div>
