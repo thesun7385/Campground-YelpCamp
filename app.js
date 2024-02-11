@@ -18,9 +18,16 @@ const methodOverride = require("method-override");
 const app = express(); // create express app
 const Joi = require("joi");
 
-////  Security Enhancement  ////
+//// MongoDB Atlas connection Configuration///
+const MongoStore = require("connect-mongo");
+const dbUrl = "mongodb://127.0.0.1:27017/yelp-camp";
+
+// Importing the models
+
+/////////////////////////  Security Enhancement  /////////////////////////////
 //replace the prohibited characters with another allowed character.
 const mongoSanitize = require("express-mongo-sanitize");
+const helmet = require("helmet");
 
 // Allows to authenticate via different strategies
 const passport = require("passport");
@@ -42,8 +49,9 @@ const reviewRoutes = require("./routes/reviews");
 const userRoutes = require("./routes/users");
 
 // Test mongodb connection // update
+// Change connection string to mongodb atlas
 mongoose
-  .connect("mongodb://127.0.0.1:27017/yelp-camp", {
+  .connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // Not required  useFindAndModify: false as default is false
@@ -56,8 +64,21 @@ mongoose
     console.log(err);
   });
 
+// Store cookies in the database
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  touchAfter: 24 * 60 * 60,
+  crypto: {
+    secret: "thisshouldbeabettersecret!",
+  },
+});
+store.on("error", function (e) {
+  console.log("Session Store Error", e);
+});
+
 // Session configuration
 const sessionConfig = {
+  store,
   name: "session", // default is 'session
   secret: "thisshouldbeabettersecret!",
   resave: false,
@@ -97,6 +118,14 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // // This module searches for any keys in objects that begin with a $ sign or contain
 app.use(mongoSanitize());
+// This disables the Content-Security-Policy
+// and X-Download-Options headers.
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    xDownloadOptions: false,
+  })
+);
 
 //////////////////////////// MIDDELWARE FOR AUTHENTICATION ///////////////
 app.use(passport.initialize());

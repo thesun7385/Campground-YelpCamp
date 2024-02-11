@@ -11,7 +11,7 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
 
 map.on("load", () => {
-  console.log("MAP LOADED!!!!!!");
+  //console.log("MAP LOADED!!!!!!");
   // Add a new source from our GeoJSON data and
   // set the 'cluster' option to true. GL-JS will
   // add the point_count property to your source data.
@@ -117,7 +117,7 @@ map.on("load", () => {
   });
 
   map.on("mouseenter", "clusters", () => {
-    console.log("MOUSING OVER A CLUSTER!!!!!!");
+    //.log("MOUSING OVER A CLUSTER!!!!!!");
     map.getCanvas().style.cursor = "pointer";
   });
   map.on("mouseleave", "clusters", () => {
