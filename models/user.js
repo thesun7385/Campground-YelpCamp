@@ -5,9 +5,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require("passport-local-mongoose");
 
-// admin user
-// id: tim1
-// password: tim1
 const UserSchema = new Schema({
   email: {
     type: String,
