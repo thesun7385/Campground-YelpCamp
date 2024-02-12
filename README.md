@@ -3,7 +3,7 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 
 ## Table of contents
 - Basic Features
-- Stack Usege
+- Tools and Frameworks
 - Installation
 
 ## Basic Features
