@@ -6,6 +6,7 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 - Tools and Frameworks
 - Installation Steps
 - Running the Application
+- License
 
 ## Basic Features
 * Campground Listings
@@ -65,16 +66,34 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
   MAPBOX_TOKEN = your-token  
   DB_URL = mongodb://localhost:27017/your-database-name
    ```
-8. Start the server locally
+## Running the Application
+
+1. Start the server locally
    ```
    npm start
    ```
-9. Visit the Local Website
+2. Visit the Local Website
 - Open your web browser and go to http://localhost:3000
 
-10. Explore Yelp Camp !!
+3. Explore Yelp Camp !!
    
    
+## License
+Yelp Camp Project - Part of Colt Steele's Tutorial
+(c) [2024] Supachai Ruknuy
 
+This project is a part of the "Web Developer Bootcamp" tutorial by Colt Steele. The original tutorial content and guidelines are the intellectual property of Colt Steele.
+
+As a learner and contributor to the Yelp Camp project within the context of Colt Steele's tutorial, you are granted the following rights:
+
+You are free to use, modify, and distribute the codebase for educational purposes.
+Attribution to Colt Steele and the tutorial is required in any derivative work or distribution.
+Attribution:
+
+The original tutorial: [Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/?kw=web&src=sac)
+Instructor: Colt Steele
+
+Note:
+This license is specific to the context of Colt Steele's tutorial. For any use beyond the scope of the tutorial or if you intend to distribute the project outside of educational purposes, please refer to the terms and conditions provided by Colt Steele or seek appropriate permission
 
 
