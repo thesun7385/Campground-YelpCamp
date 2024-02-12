@@ -79,6 +79,7 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
    
    
 ## License
+
 Yelp Camp Project - Part of Colt Steele's Tutorial
 (c) [2024] Supachai Ruknuy
 
@@ -93,7 +94,5 @@ Attribution:
 The original tutorial: [Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/?kw=web&src=sac)
 Instructor: Colt Steele
 
-Note:
-This license is specific to the context of Colt Steele's tutorial. For any use beyond the scope of the tutorial or if you intend to distribute the project outside of educational purposes, please refer to the terms and conditions provided by Colt Steele or seek appropriate permission
 
 
