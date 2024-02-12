@@ -73,9 +73,9 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
    npm start
    ```
 2. Visit the Local Website
-- Open your web browser and go to http://localhost:3000
+   - Open your web browser and go to http://localhost:3000
 
-3. Explore Yelp Camp !!
+4. Explore Yelp Camp !!
    
    
 ## License
