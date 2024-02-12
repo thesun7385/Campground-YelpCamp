@@ -3,8 +3,7 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 
 ## Table of contents
 - Basic Features
-- Requirements
-- Recommended modules
+- Stack Usege
 - Installation
 
 ## Basic Features
@@ -17,10 +16,14 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 * Backend Technologies
 * RESTful Routes
   
-
  <p align="center">
   <img src="https://res.cloudinary.com/dwsihr9yg/image/upload/v1707702592/web-screenshots/elotc537lyfb3gdhppqe.jpg" alt="Campground">
    <img src="https://res.cloudinary.com/dwsihr9yg/image/upload/v1707702592/web-screenshots/qylqmjbzeewqk6iaswfb.jpg" alt="Campground">
    <img src="https://res.cloudinary.com/dwsihr9yg/image/upload/v1707702592/web-screenshots/qiwxaiugfn4jv178gr4y.jpg" alt="Campground">
  </p>
 
+
+##Stack Usege 
+- [MongoDB](https://www.mongodb.com/)
+- [express](https://expressjs.com//) 
+- [Node.js](https://nodejs.org) 
