@@ -83,9 +83,8 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 Yelp Camp Project - Part of Colt Steele's Tutorial
 (c) [2024] Supachai Ruknuy
 
-This project is a part of the "Web Developer Bootcamp" tutorial by Colt Steele. The original tutorial content and guidelines are the intellectual property of Colt Steele.
-
-As a learner and contributor to the Yelp Camp project within the context of Colt Steele's tutorial, you are granted the following rights:
+This project is a part of the "Web Developer Bootcamp" tutorial by Colt Steele. 
+The original tutorial content and guidelines are the intellectual property of Colt Steele.
 
 You are free to use, modify, and distribute the codebase for educational purposes.
 Attribution to Colt Steele and the tutorial is required in any derivative work or distribution.
