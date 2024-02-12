@@ -1,3 +1,3 @@
 # 2024 YelpCamp
-YelpCamp is a fictional campground featured in a popular web development tutorial called "The Web Developer Bootcamp" by Colt Steele. The tutorial is designed to teach beginners how to build a full-stack web application using technologies such as HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, and more.
+YelpCamp is a comprehensive web development project commonly used as a learning resource in web development courses or tutorials. The project is designed to guide individuals, especially beginners, through the process of creating a fully functional web application with features typically found in a campground review website. 
 
