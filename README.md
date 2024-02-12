@@ -32,8 +32,48 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 ## Installation Steps
 1. Clone the Repository
    ```
-   https://github.com/thesun7385/Campground-YelpCamp.git
+   git clone https://github.com/thesun7385/Campground-YelpCamp.git
    ```
+2. Navigate to the Project Directory
+   ```
+   cd Campground-YelpCamp
+   ```
+3. Install Dependencies
+   ```
+   npm install
+   ```
+4.Set Up MongoDB
+- Make sure MongoDB is installed and running on your local machine.
+- Create a MongoDB database for Yelp Camp and configure the connection in the project.
+
+5.Cloudinary Configuration:
+- Register for a Cloudinary account if you don't have one.
+- Obtain your Cloudinary API key, API secret, and cloud name.
+- Add the Cloudinary configuration to your .env file.
+
+6.Mapbox Configuration:
+- Sign up for a Mapbox account and obtain an API key.
+- Add the Mapbox API key to your .env file.
+
+7.Environment Variables:
+- Create a .env file in the project root for sensitive information like database connection details and Cloudinary API keys.
+- Example .env file:
+   ```
+  COULDINARY_CLOUD_NAME = your-cloud-name
+  COULDINARY_KEY =  your-key
+  COULDINARY_SECRET = your-secret
+  MAPBOX_TOKEN = your-token  
+  DB_URL = mongodb://localhost:27017/your-database-name
+   ```
+8. Start the server locally
+   ```
+   npm start
+   ```
+9.Visit the Local Website
+- Open your web browser and go to http://localhost:3000
+
+10. Explore Yelp Camp !!
+   
    
 
 
