@@ -8,11 +8,11 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 - Installation
 
 ## Basic Features
-*Campground Listings
-*User Authentication
-*Campground Reviews and Ratings
-*CRUD Operations
-*Image Uploads
-*Responsive Design
-*Backend Technologies
-*RESTful Routes:
+* Campground Listings
+* User Authentication
+* Campground Reviews and Ratings
+* CRUD Operations
+* Image Uploads
+* Responsive Design
+* Backend Technologies
+* RESTful Routes
