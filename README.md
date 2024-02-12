@@ -42,20 +42,20 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
    ```
    npm install
    ```
-4.Set Up MongoDB
+4. Set Up MongoDB
 - Make sure MongoDB is installed and running on your local machine.
 - Create a MongoDB database for Yelp Camp and configure the connection in the project.
 
-5.Cloudinary Configuration:
+5. Cloudinary Configuration:
 - Register for a Cloudinary account if you don't have one.
 - Obtain your Cloudinary API key, API secret, and cloud name.
 - Add the Cloudinary configuration to your .env file.
 
-6.Mapbox Configuration:
+6. Mapbox Configuration:
 - Sign up for a Mapbox account and obtain an API key.
 - Add the Mapbox API key to your .env file.
 
-7.Environment Variables:
+7. Environment Variables:
 - Create a .env file in the project root for sensitive information like database connection details and Cloudinary API keys.
 - Example .env file:
    ```
@@ -69,7 +69,7 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
    ```
    npm start
    ```
-9.Visit the Local Website
+9. Visit the Local Website
 - Open your web browser and go to http://localhost:3000
 
 10. Explore Yelp Camp !!
