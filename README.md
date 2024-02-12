@@ -16,3 +16,9 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 * Responsive Design
 * Backend Technologies
 * RESTful Routes
+* 
+<a href="https://res.cloudinary.com/dwsihr9yg/image/upload/v1707702592/web-screenshots/elotc537lyfb3gdhppqe.jpg">
+ <p align="center">
+  <img src="https://res.cloudinary.com/dwsihr9yg/image/upload/v1707702592/web-screenshots/elotc537lyfb3gdhppqe.jpg" alt="Campground"
+ </p>
+</a>
