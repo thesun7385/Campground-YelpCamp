@@ -31,7 +31,9 @@ YelpCamp is a comprehensive web development project commonly used as a learning 
 
 ## Installation Steps
 1. Clone the Repository
-   `https://github.com/thesun7385/Campground-YelpCamp.git`
+   ```
+   https://github.com/thesun7385/Campground-YelpCamp.git
+   ```
    
 
 
