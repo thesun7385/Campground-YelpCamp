@@ -21,7 +21,11 @@ const Joi = require("joi");
 //// MongoDB Atlas connection Configuration and local database///
 
 const MongoStore = require("connect-mongo");
+
+//////////////////////// MongoDB Atlas connection Configuration////////////////////////////////
 const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/yelp-camp";
+// Local database connection Configuration
+// const dbUrl = "mongodb://127.0.0.1:27017/yelp-camp";
 
 // Importing the models
 
@@ -44,7 +48,7 @@ const User = require("./models/user");
 console.log("Cloudinary Name: " + process.env.COULDINARY_CLOUD_NAME);
 console.log("Cloudinary Key: " + process.env.COULDINARY_KEY);
 
-///////////////// Import routes /////////////
+///////////////// Import routes to define schema /////////////
 const campgroundRoutes = require("./routes/campgrounds");
 const reviewRoutes = require("./routes/reviews");
 const userRoutes = require("./routes/users");
@@ -53,8 +57,8 @@ const userRoutes = require("./routes/users");
 // Change connection string to mongodb atlas
 mongoose
   .connect(dbUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
     // Not required  useFindAndModify: false as default is false
   })
   .then(() => {
@@ -88,7 +92,7 @@ const sessionConfig = {
   saveUninitialized: true,
   cookie: {
     httpOnly: true,
-    // secure: true,  // secured login
+    // secure: true, // secured login
     expire: Date.now() + 1000 * 60 * 60 * 24 * 7, // 1 week in milliseconds
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
@@ -174,6 +178,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start express server on port 3000
-app.listen(3000, () => {
-  console.log("server started on port 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`server started on port ${port}`);
 });

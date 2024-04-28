@@ -35,27 +35,20 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item text-muted"><%= campground.location %></li>
         <li class="list-group-item">
-          Submitted by <%= campground.author.username %>
+          Submitted by <%= (campground.author && campground.author.username) ? campground.author.username : 'Unknown User' %>
         </li>
         <li class="list-group-item">$<%= campground.price %>/night</li>
       </ul>
       <!-- validate the current user -->
-      <% if(currentUser && campground.author.equals(currentUser._id)) {%>
-      <div class="card-body">
-        <a
-          class="card-link btn btn-info"
-          href="/campgrounds/<%= campground._id %>/edit"
-          >Edit</a
-        >
-        <form
-          class="d-inline"
-          action="/campgrounds/<%= campground._id %>?_method=DELETE"
-          method="POST"
-        >
-          <button class="card-link btn btn-danger">Delete</button>
-        </form>
-      </div>
+      <% if(currentUser && campground.author && campground.author.equals(currentUser._id)) { %>
+        <div class="card-body">
+          <a class="card-link btn btn-info" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+          <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+            <button class="card-link btn btn-danger">Delete</button>
+          </form>
+        </div>
       <% } %>
+      
       <div class="card-footer text-muted">2 days ago</div>
     </div>
   </div>
@@ -64,7 +57,7 @@
      <!-- Mapbox -->
      <div id='map'></div>
     <% if(currentUser) {%>
-    <h2>Leave a Review</h2>
+    <h2 class="mt-3">Leave a Review</h2>
     <form
       action="/campgrounds/<%= campground._id %>/reviews"
       method="POST"
@@ -73,7 +66,7 @@
     >
 
     <!-- Rating review -->
-  <div class="mb-3">
+  <div class="mb- mt-3">
       <fieldset class="starability-basic" >
         
         <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating."  />
@@ -108,7 +101,7 @@
     <!-- loop through reviews -->
     <% for(let review of campground.reviews) {%>
     <!-- cover with card class -->
-    <div class="card mb-3">
+    <div class="card mb-3 mt-3">
       <div class="card-body">
         <h5 class="card-title">Rating: <%= review.rating %></h5>
  

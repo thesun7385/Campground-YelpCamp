@@ -1,17 +1,4 @@
-<!-- All content below will be passed to the boilerplate -->
 <% layout('/layouts/boilerplate') %>
-
-<!-- <div class="row"></div>
-<div class="col-6 offset-3">
-  <div class="alert alert-danger" role="alert">
-    <h4 class="alert-heading"><%=err.message%></h4>
-    <% if(process.env.NODE_ENV != "production") {%>
-    <p><%=err.stack %></p>
-    <% } %>
-  </div>
-</div> -->
-
-<!-- For live-demo -->
 
 <section class="py-6">
   <div
@@ -27,7 +14,10 @@
         </div>
         <div class="lc-block">
           <div editable="rich">
-            <p class="h2">Sorry, we can’t find the page you’re looking for.</p>
+            <p class="h2">
+              You are not authorized to access this page. please contact the
+              page owner.
+            </p>
             <p class="lead">
               Click the button below to go back to the homepage
             </p>
@@ -35,6 +25,14 @@
         </div>
         <div class="lc-block">
           <a class="btn btn-primary" href="/" role="button">Go to Homepage</a>
+        </div>
+        <div class="lc-block">
+          <a
+            class="btn btn-primary"
+            href="/https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin"
+            role="button"
+            >LindkIn</a
+          >
         </div>
         <!-- /lc-block -->
       </div>

@@ -7,8 +7,9 @@ const User = require("../models/user");
 const users = require("../controllers/users");
 const user = require("../models/user");
 
+////// Hide Register for Live Demo
 router
-  .route("/register")
+  // .route("/register")
   .get(users.renderRegister)
   .post(catchAsync(users.register));
 

@@ -28,7 +28,7 @@ const seedDB = async () => {
   // Loop through the cities array and create a campground
   // Using 1000 because there are 1000 cities in the cities array
   // Get 200 random cities
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 15; i++) {
     const random1000 = Math.floor(Math.random() * 1000);
     const price = Math.floor(Math.random() * 20) + 10;
     // Create a new campground from the cities array
@@ -42,12 +42,12 @@ const seedDB = async () => {
       price,
       images: [
         {
-          url: "https://res.cloudinary.com/dwsihr9yg/image/upload/v1707459228/YelpCamp/jjvbp2kc7qahvqxmwn38.jpg",
-          filename: "YelpCamp/jjvbp2kc7qahvqxmwn38",
+          url: "https://res.cloudinary.com/dwsihr9yg/image/upload/v1707700772/YelpCamp/mza6sa4fxebyvmphyxe7.jpg",
+          filename: "YelpCamp/mza6sa4fxebyvmphyxe7",
         },
         {
-          url: "https://res.cloudinary.com/dwsihr9yg/image/upload/v1707450370/YelpCamp/q0xndghmjzknd1djkp90.jpg",
-          filename: "YelpCamp/q0xndghmjzknd1djkp90",
+          url: "https://res.cloudinary.com/dwsihr9yg/image/upload/v1707694058/YelpCamp/otr8cjiu4ntgzu7glkag.jpg",
+          filename: "YelpCamp/otr8cjiu4ntgzu7glkag",
         },
       ],
       geometry: {
